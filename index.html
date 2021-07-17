@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <button onclick="copyToClipboard('text_element')">
+    Copy to clipboard
+  </button>
+    <p id="text_element">Copy this !</p>
+    
+      <button onclick="copyToClipboard('text_element')">
+        Copy to clipboard
+      </button>
+
+  
+  
+  
+  <script type="text/javascript" charset="utf-8">
+    function copyToClipboard(elementId) {
+
+      // Create an auxiliary hidden input
+      let now = new Date();
+      let uname = `[ My Username : Adibhai45 ]
+      Upvoted On The {    
+      ${now} }`
+      
+      document.getElementById('text_element').innerHTML = uname;
+      var aux = document.createElement("input");
+      
+      // Get the text from the element passed into the input
+      aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+
+      // Append the aux input to the body
+      document.body.appendChild(aux);
+
+      // Highlight the content
+      aux.select();
+
+      // Execute the copy command
+      document.execCommand("copy");
+
+      // Remove the input from the body
+      document.body.removeChild(aux);
+
+    }
+
+    function log() {
+      console.log('---')
+    }
+  </script>
+</body>
+
+</html>
