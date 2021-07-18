@@ -20,9 +20,20 @@
   <button id="btn3" class="btn" onclick="copyToClipboard('text_element',this.id)">
     Reddit Upvotes URL
   </button>
+  <button id="btn6" class="btn" onclick="copyToClipboard('text_element',this.id)">
+    Reddit Shadowbanned Text
+  </button>
   <button id="btn4" class="btn" onclick="copyToClipboard('text_element',this.id)">
     Youtube Channel URL
   </button>
+  <button id="btn5" class="btn" onclick="copyToClipboard('text_element',this.id)">
+    Youtube Channel Name
+  </button>
+  <button id="btn7" class="btn" onclick="copyToClipboard('text_element',this.id)">
+    Coinsniper Email
+  </button>
+
+
   <p id="text_element">Copy this !</p>
   <script type="text/javascript" charset="utf-8">
     function copyToClipboard(elementId, thisid) {
@@ -46,7 +57,23 @@
       let yu = ' https://youtube.com/channel/UCB1xWVhIPAX9_NtKDPHfOYg'
       let ycu = `[ My YouTube Channel Link : ${yu} ]
       Subscribed On The { ${now} }`
-      
+
+      // Youtube Channal Name
+      let yn = 'Aditya 46'
+      let ycn = `[ My YouTube Channel Name : ${yn} ]
+      Subscribed On The { ${now} }`
+
+      // Reddit Shadowbanned 
+      let sb = ' Adibhai45 '
+      let sbt = `[ Message Appeared :" Adibhai45 Is Not Shadowbanned "]
+      Upvoted Your Post on { ${now} }`
+
+      // Coinsniper Email
+      let ce = ' pratap45kumar@gmail.com '
+      let cse = `[ Coinsniper Email :" ${ce} "]
+      Upvoted Your Post on { ${now} }`
+
+
       if (thisid == 'btn1' ){
       document.getElementById('text_element').innerHTML = uname;
       var aux = document.createElement("input");
@@ -66,7 +93,21 @@
       document.getElementById('text_element').innerHTML = ycu;
       var aux = document.createElement("input");
       aux.setAttribute("value",ycu);}
+      
+      if (thisid == 'btn5' ){
+      document.getElementById('text_element').innerHTML = ycn;
+      var aux = document.createElement("input");
+      aux.setAttribute("value",ycn);}
 
+      if (thisid == 'btn6' ){
+      document.getElementById('text_element').innerHTML = sbt;
+      var aux = document.createElement("input");
+      aux.setAttribute("value",sbt);}
+
+      if (thisid == 'btn7' ){
+      document.getElementById('text_element').innerHTML = cse;
+      var aux = document.createElement("input");
+      aux.setAttribute("value",cse);}
 
       document.body.appendChild(aux);
       aux.select();
