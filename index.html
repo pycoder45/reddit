@@ -6,52 +6,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="anime.css" type="text/css" media="all" />
   <link rel="stylesheet" href="style.css" type="text/css" media="all" />
 </head>
 
 <body>
-  <button onclick="copyToClipboard('text_element')">
-    Copy to clipboard
+  <button id="btn1" class="btn" onclick="copyToClipboard('text_element',this.id)">
+    Reddit Username
   </button>
-    <p id="text_element">Copy this !</p>
-    
-      <button onclick="copyToClipboard('text_element')">
-        Copy to clipboard
-      </button>
-
-  
-  
-  
+  <button id="btn2" class="btn" onclick="copyToClipboard('text_element',this.id)">
+    Reddit Profile URL
+  </button>
+  <button id="btn3" class="btn" onclick="copyToClipboard('text_element',this.id)">
+    Reddit Upvotes URL
+  </button>
+  <button id="btn4" class="btn" onclick="copyToClipboard('text_element',this.id)">
+    Youtube Channel URL
+  </button>
+  <p id="text_element">Copy this !</p>
   <script type="text/javascript" charset="utf-8">
-    function copyToClipboard(elementId) {
+    function copyToClipboard(elementId, thisid) {
 
-      // Create an auxiliary hidden input
+      // Reddit Username 
       let now = new Date();
       let uname = `[ My Username : Adibhai45 ]
       Upvoted On The { ${now} }`
+
+      // Reddit Profile URL
+      let pu = ' https://www.reddit.com/user/Adibhai45/ '
+      let rpu = `[ My Reddit Profile Link : ${pu} ]
+      Upvoted On The { ${now} }`
+
+      // Reddit Upvotes URL
+      let uu = ' https://www.reddit.com/user/Adibhai45/upvoted/  '
+      let ruu = `[ My Upvotes URL : ${uu} ]
+      Upvoted On The { ${now} }`
+
+      // Youtube Channal Link
+      let yu = ' https://youtube.com/channel/UCB1xWVhIPAX9_NtKDPHfOYg'
+      let ycu = `[ My YouTube Channel Link : ${yu} ]
+      Subscribed On The { ${now} }`
       
+      if (thisid == 'btn1' ){
       document.getElementById('text_element').innerHTML = uname;
       var aux = document.createElement("input");
+      aux.setAttribute("value",uname);}
       
-      // Get the text from the element passed into the input
-      aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+      if (thisid == 'btn2' ){
+      document.getElementById('text_element').innerHTML = rpu;
+      var aux = document.createElement("input");
+      aux.setAttribute("value",rpu);}
 
-      // Append the aux input to the body
+      if (thisid == 'btn3' ){
+      document.getElementById('text_element').innerHTML = ruu;
+      var aux = document.createElement("input");
+      aux.setAttribute("value",ruu);}
+
+      if (thisid == 'btn4' ){
+      document.getElementById('text_element').innerHTML = ycu;
+      var aux = document.createElement("input");
+      aux.setAttribute("value",ycu);}
+
+
       document.body.appendChild(aux);
-
-      // Highlight the content
       aux.select();
-
-      // Execute the copy command
       document.execCommand("copy");
-
-      // Remove the input from the body
       document.body.removeChild(aux);
 
-    }
-
-    function log() {
-      console.log('---')
+      var shakeEle = document.getElementById(thisid)
+      shakeEle.style.animation = 'none';
+      shakeEle.classList.add('heartbeat');
+      shakeEle.offsetHeight; /* trigger reflow */
+      shakeEle.style.animation = null;
     }
   </script>
 </body>

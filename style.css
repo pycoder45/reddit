@@ -1,4 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+@keyframes heartbeat {
+  0%{
+   transform: scale(1)
+
+  }
+  5%{
+    transform: scale(0.98)
+  }
+  50%{
+    transform :scale(1.05);
+    border:1px solid #FFFFFF;
+  }
+  100%{
+    transform:scale(1)
+  }
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -25,14 +43,23 @@ button,#text_element{
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   width: 80vw;
-  margin:40px 40px;
+  margin:10px 40px;
   color: white;
   height: 8vh;
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
+
 }
 #text_element{
   height: 40vh;
   text-align: center;
   padding: 20px;
+  
+}
+#text_element{
+  display: none;
+}
+.heartbeat {
+  -webkit-animation: heartbeat 0.4s ease-in-out 1 both;
+  animation: heartbeat 0.4s ease-in-out 1 both;
 }
