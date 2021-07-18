@@ -89,64 +89,27 @@
       let hu = ' @VasteAditya '
       let thu = `[ 1) My Twitter Handle :${hu} 2) My Twitter Name : Aditya Vaste ]   Work is Done on { ${now} }`
 
+  dict = {"btn1" : uname,"btn2" : rpu,"btn3" : ruu,"btn4" : ycu, "btn5" : ycn,"btn6" : sbt,"btn7" : cse,"btn8" : tun,"btn9" : thu,
+  }
 
-      if (thisid == 'btn1' ){
-      document.getElementById('text_element').innerHTML = uname;
-      var aux = document.createElement("input");
-      aux.setAttribute("value",uname);}
-      
-      if (thisid == 'btn2' ){
-      document.getElementById('text_element').innerHTML = rpu;
-      var aux = document.createElement("input");
-      aux.setAttribute("value",rpu);}
+  dts = dict[thisid]
+  document.getElementById('text_element').innerHTML = dts;
+  var aux = document.createElement("input");
+  aux.setAttribute("value",dts);
+  
+  document.body.appendChild(aux);
+  aux.select();
+  document.execCommand("copy");
+  document.body.removeChild(aux);
 
-      if (thisid == 'btn3' ){
-      document.getElementById('text_element').innerHTML = ruu;
-      var aux = document.createElement("input");
-      aux.setAttribute("value",ruu);}
-
-      if (thisid == 'btn4' ){
-      document.getElementById('text_element').innerHTML = ycu;
-      var aux = document.createElement("input");
-      aux.setAttribute("value",ycu);}
-      
-      if (thisid == 'btn5' ){
-      document.getElementById('text_element').innerHTML = ycn;
-      var aux = document.createElement("input");
-      aux.setAttribute("value",ycn);}
-
-      if (thisid == 'btn6' ){
-      document.getElementById('text_element').innerHTML = sbt;
-      var aux = document.createElement("input");
-      aux.setAttribute("value",sbt);}
-
-      if (thisid == 'btn7' ){
-      document.getElementById('text_element').innerHTML = cse;
-      var aux = document.createElement("input");
-      aux.setAttribute("value",cse);}
-
-      if (thisid == 'btn8' ){
-      document.getElementById('text_element').innerHTML = tu;
-      var aux = document.createElement("input");
-      aux.setAttribute("value",tun);}
-
-      if (thisid == 'btn9' ){
-      document.getElementById('text_element').innerHTML = hu;
-      var aux = document.createElement("input");
-      aux.setAttribute("value",thu);}
-
-      document.body.appendChild(aux);
-      aux.select();
-      document.execCommand("copy");
-      document.body.removeChild(aux);
-
-      var shakeEle = document.getElementById(thisid)
-      shakeEle.style.animation = 'none';
-      shakeEle.classList.add('heartbeat');
-      shakeEle.offsetHeight; /* trigger reflow */
-      shakeEle.style.animation = null;
+  var shakeEle = document.getElementById(thisid)
+  shakeEle.style.animation = 'none';
+  shakeEle.classList.add('heartbeat');
+  shakeEle.offsetHeight; /* trigger reflow */
+  shakeEle.style.animation = null;
     }
   </script>
 </body>
 
 </html>
+
